@@ -25,7 +25,7 @@ class AppStyle {
     fontFamily: Platform.isWindows
         ? "Microsoft YaHei"
         : Platform.isAndroid
-            ? "sans-serif"
+            ? "HarmonyOS Sans"
             : null,
     visualDensity: VisualDensity.standard,
     appBarTheme: AppBarTheme(
@@ -70,14 +70,14 @@ class AppStyle {
           fontFamily: Platform.isWindows
               ? "Microsoft YaHei"
               : Platform.isAndroid
-                  ? "sans-serif"
+                  ? "HarmonyOS Sans"
                   : null,
         ),
     primaryTextTheme: ThemeData().textTheme.apply(
           fontFamily: Platform.isWindows
               ? "Microsoft YaHei"
               : Platform.isAndroid
-                  ? "sans-serif"
+                  ? "HarmonyOS Sans"
                   : null,
         ),
     appBarTheme: AppBarTheme(
