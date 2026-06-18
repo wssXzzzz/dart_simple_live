@@ -22,7 +22,11 @@ class AppStyle {
   static ThemeData lightTheme = ThemeData(
     colorScheme: AppColors.lightColorScheme,
     useMaterial3: true,
-    fontFamily: Platform.isWindows ? "Microsoft YaHei" : null,
+    fontFamily: Platform.isWindows
+        ? "Microsoft YaHei"
+        : Platform.isAndroid
+            ? "sans-serif"
+            : null,
     visualDensity: VisualDensity.standard,
     appBarTheme: AppBarTheme(
       //elevation: 0,
@@ -63,10 +67,18 @@ class AppStyle {
     colorScheme: AppColors.darkColorScheme,
     visualDensity: VisualDensity.standard,
     textTheme: ThemeData.dark().textTheme.apply(
-          fontFamily: Platform.isWindows ? "Microsoft YaHei" : null,
+          fontFamily: Platform.isWindows
+              ? "Microsoft YaHei"
+              : Platform.isAndroid
+                  ? "sans-serif"
+                  : null,
         ),
     primaryTextTheme: ThemeData().textTheme.apply(
-          fontFamily: Platform.isWindows ? "Microsoft YaHei" : null,
+          fontFamily: Platform.isWindows
+              ? "Microsoft YaHei"
+              : Platform.isAndroid
+                  ? "sans-serif"
+                  : null,
         ),
     appBarTheme: AppBarTheme(
       //elevation: 0,
