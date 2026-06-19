@@ -657,7 +657,7 @@ Widget buildDanmuView(VideoState videoState, LiveRoomController controller) {
       opacity: AppSettingsController.instance.danmuOpacity.value,
       //strokeWidth: AppSettingsController.instance.danmuStrokeWidth.value,
       fontWeight: AppSettingsController.instance.danmuFontWeight.value,
-      fontFamily: Platform.isAndroid ? "PorscheRound" : null,
+      fontFamily: Platform.isAndroid ? AppColors.fontFamily : null,
     ),
   );
   return Positioned.fill(

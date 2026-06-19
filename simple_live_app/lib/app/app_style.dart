@@ -16,24 +16,28 @@ class AppColors {
   );
 
   static const Color black333 = Color(0xFF333333);
+
+  /// App 使用的字体名（换字体时只改这一处）
+  static String get fontFamily => Platform.isWindows
+      ? "Microsoft YaHei"
+      : Platform.isAndroid
+          ? "PorscheRound"
+          : "Roboto";
 }
 
 class AppStyle {
   static ThemeData lightTheme = ThemeData(
     colorScheme: AppColors.lightColorScheme,
     useMaterial3: true,
-    fontFamily: Platform.isWindows
-        ? "Microsoft YaHei"
-        : Platform.isAndroid
-            ? "PorscheRound"
-            : null,
+    fontFamily: AppColors.fontFamily,
     visualDensity: VisualDensity.standard,
     appBarTheme: AppBarTheme(
       //elevation: 0,
       centerTitle: true,
-      titleTextStyle: const TextStyle(
+      titleTextStyle: TextStyle(
         fontSize: 16,
         color: AppColors.black333,
+        fontFamily: AppColors.fontFamily,
       ),
       foregroundColor: AppColors.black333,
       systemOverlayStyle: SystemUiOverlayStyle.dark.copyWith(
@@ -67,26 +71,19 @@ class AppStyle {
     colorScheme: AppColors.darkColorScheme,
     visualDensity: VisualDensity.standard,
     textTheme: ThemeData.dark().textTheme.apply(
-          fontFamily: Platform.isWindows
-              ? "Microsoft YaHei"
-              : Platform.isAndroid
-                  ? "PorscheRound"
-                  : null,
+          fontFamily: AppColors.fontFamily,
         ),
     primaryTextTheme: ThemeData().textTheme.apply(
-          fontFamily: Platform.isWindows
-              ? "Microsoft YaHei"
-              : Platform.isAndroid
-                  ? "PorscheRound"
-                  : null,
+          fontFamily: AppColors.fontFamily,
         ),
     appBarTheme: AppBarTheme(
       //elevation: 0,
 
       centerTitle: true,
-      titleTextStyle: const TextStyle(
+      titleTextStyle: TextStyle(
         fontSize: 16,
         color: Colors.white,
+        fontFamily: AppColors.fontFamily,
       ),
       foregroundColor: Colors.white,
       systemOverlayStyle: SystemUiOverlayStyle.light.copyWith(
