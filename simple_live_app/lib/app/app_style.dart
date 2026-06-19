@@ -25,7 +25,7 @@ class AppStyle {
     fontFamily: Platform.isWindows
         ? "Microsoft YaHei"
         : Platform.isAndroid
-            ? "HarmonyOS Sans"
+            ? "PorscheRound"
             : null,
     visualDensity: VisualDensity.standard,
     appBarTheme: AppBarTheme(
@@ -70,14 +70,14 @@ class AppStyle {
           fontFamily: Platform.isWindows
               ? "Microsoft YaHei"
               : Platform.isAndroid
-                  ? "HarmonyOS Sans"
+                  ? "PorscheRound"
                   : null,
         ),
     primaryTextTheme: ThemeData().textTheme.apply(
           fontFamily: Platform.isWindows
               ? "Microsoft YaHei"
               : Platform.isAndroid
-                  ? "HarmonyOS Sans"
+                  ? "PorscheRound"
                   : null,
         ),
     appBarTheme: AppBarTheme(

@@ -104,11 +104,6 @@ flutter:
     - assets/lotties/
 
   fonts:
-    - family: HarmonyOS Sans
+    - family: PorscheRound
       fonts:
-        - asset: assets/fonts/HarmonyOS_Sans_Regular.ttf
-        - asset: assets/fonts/HarmonyOS_Sans_Bold.ttf
-          weight: 700
-        - asset: assets/fonts/HarmonyOS_Sans_SC_Regular.ttf
-        - asset: assets/fonts/HarmonyOS_Sans_SC_Bold.ttf
-          weight: 700
+        - asset: assets/fonts/PorscheRound.ttf
