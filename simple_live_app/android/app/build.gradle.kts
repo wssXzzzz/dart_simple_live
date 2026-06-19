@@ -40,10 +40,30 @@ android {
     }
 
 
+    signingConfigs {
+        // 个人自用固定签名 keystore，保证 CI 每次编译签名一致，APK 可直接覆盖安装。
+        // keystore 已随仓库提交（个人自用，签名泄露无实际风险）。
+        create("release") {
+            val storeFilePath = "release-sign.jks"
+            val storeFile = file(storeFilePath)
+            if (storeFile.exists()) {
+                keyAlias = "jhzb-key"
+                keyPassword = "jhzb123456"
+                storeFile = storeFile
+                storePassword = "jhzb123456"
+            }
+        }
+    }
+
     buildTypes {
         release {
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            // 若 release-sign.jks 存在则用固定签名，否则回退 debug。
+            signingConfig = if (file("release-sign.jks").exists()) {
+                signingConfigs.getByName("release")
+            } else {
+                signingConfigs.getByName("debug")
+            }
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(

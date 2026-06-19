@@ -12,3 +12,5 @@ GeneratedPluginRegistrant.java
 key.properties
 **/*.keystore
 **/*.jks
+# 个人自用固定签名 keystore, 需要进仓库以保证 CI 签名一致
+!release-sign.jks
