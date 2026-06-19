@@ -44,12 +44,11 @@ android {
         // 个人自用固定签名 keystore，保证 CI 每次编译签名一致，APK 可直接覆盖安装。
         // keystore 已随仓库提交（个人自用，签名泄露无实际风险）。
         create("release") {
-            val storeFilePath = "release-sign.jks"
-            val storeFile = file(storeFilePath)
-            if (storeFile.exists()) {
+            val ksFile = file("release-sign.jks")
+            if (ksFile.exists()) {
                 keyAlias = "jhzb-key"
                 keyPassword = "jhzb123456"
-                storeFile = storeFile
+                storeFile = ksFile
                 storePassword = "jhzb123456"
             }
         }
